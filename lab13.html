@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lab13</title>
+</head>
+<body>
+	<div id="block">
+		<h2 class="header">JS Calulator</h2>
+<form>
+	<label>Number 1</label><input type="text" id="num1" class="input_box"><br>
+	<label>Number 2</label><input type="text" id="num2" class="input_box"><br>
+	<label>Calculation</label>	
+<select id="operate" name="method">
+　<option value="0">+</option>
+　<option value="1">-</option>
+　<option value="2">*</option>
+　<option value="3">/</option>
+</select>
+</form>
+	<input type="button" value="Run" class="cal_button" onclick="calculator()"><br>
+	<p>Result= <span id="result"></script></span></p>
+</div>
+<script type="text/javascript">
+	function add(n1,n2){
+		return n1+n2;
+	}
+	function minus(n1,n2){
+		return n1-n2;
+	}
+	function multiply(n1,n2){
+		return n1*n2;
+	}
+	function divide(n1,n2){
+		return n1/n2;
+	}
+	function calculator(){
+		var operator=parseInt(document.getElementById('operate').value);
+		var n1=parseInt(document.getElementById('num1').value);
+		var n2=parseInt(document.getElementById('num2').value);
+		if(operator==0){
+			document.getElementById('result').innerHTML=add(n1,n2);
+		}else if(operator==1){
+			document.getElementById('result').innerHTML=minus(n1,n2);
+		}else if(operator==2){
+			document.getElementById('result').innerHTML=multiply(n1,n2);
+		}else{
+			document.getElementById('result').innerHTML=divide(n1,n2);
+		}
+	}
+</script>
+</body>
+</html>
